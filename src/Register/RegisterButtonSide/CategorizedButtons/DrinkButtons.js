@@ -1,6 +1,7 @@
 import React from 'react';
 import XLSX from 'xlsx';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 
 function genButtons() {
@@ -12,7 +13,7 @@ function genButtons() {
     var arr = [];
     for (var i = 0; i < 10; ++i)
         arr.push(<Button
-			color='primary'
+			style={{backgroundColor: "#26a69a", color: '#faebd7'}}
 			variant='contained'
 			size='large'
 			> Drinks</Button>);
@@ -22,9 +23,11 @@ function genButtons() {
 function DrinkButtons(props) {
     var buttArr=genButtons();
     return (
-		<div>
-			{buttArr}
-		</div>
+		<div style={{ padding: 20 }}>
+		   <Grid container>
+			 {buttArr.map(button => <div style={{ padding: 5 }}> {button} </div>)}
+		   </Grid>
+        </div>
 	);
 }
 

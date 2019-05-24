@@ -40,7 +40,6 @@ class RegisterButtonContainer extends React.Component{
                 </div>    
                 <div>
                     <ButtonLoader activeTab={this.state.activeTab}/>
-            
                 </div>    
             </Paper>
         </div>
