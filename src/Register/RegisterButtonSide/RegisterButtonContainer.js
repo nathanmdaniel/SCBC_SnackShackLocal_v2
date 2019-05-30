@@ -39,7 +39,7 @@ class RegisterButtonContainer extends React.Component{
                     <Tabs setActiveFunc={this.setActiveTab}/>
                 </div>    
                 <div>
-                    <ButtonLoader activeTab={this.state.activeTab}/>
+                    <ButtonLoader activeTab={this.state.activeTab} addChip={this.props.addChip}/>
                 </div>    
             </Paper>
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ClothingButtons from './CategorizedButtons/ClothingButtons.js';
 import DrinkButtons from './CategorizedButtons/DrinkButtons.js';
 import SnackButtons from './CategorizedButtons/SnackButtons.js';
@@ -13,30 +14,29 @@ class ButtonLoader extends React.Component {
     //Maybe put function call in curly braces.
 
     render() {
-        console.log(this.props.activeTab);
         switch(this.props.activeTab) {
             case 0:
                 return (
                     <div>
-                        <ClothingButtons/>
+                        <ClothingButtons addChip={this.props.addChip}/>
                     </div>
                 );
             case 1:
                 return (
                     <div>
-                        <SnackButtons/>
+                        <SnackButtons addChip={this.props.addChip}/>
                     </div>
                 );
             case 2:
                 return (
                     <div>
-                        <DrinkButtons/>
+                        <DrinkButtons addChip={this.props.addChip}/>
                     </div>
                 );
             case 3:
                 return (
                     <div>
-                        <FrozenButtons/>
+                        <FrozenButtons addChip={this.props.addChip}/>
                     </div>
                 );
             default:
@@ -44,5 +44,10 @@ class ButtonLoader extends React.Component {
         }
     }
 }
+
+    
+    ButtonLoader.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
 
 export default ButtonLoader;
